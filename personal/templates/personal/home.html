@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<style type="text/css">
+	.image-container{
+		max-width: 250px;
+		height: auto;
+	}
+	.field-heading{
+		color: var(--secondary-text-color);
+	}
+	.icon-container:hover {
+		opacity: 0.3;
+		cursor: pointer;
+	}
+	.friends-icon{
+		color: #4287f5;
+		font-size: 40px;
+	}
+	.person-add-icon{
+		color: #4287f5;
+		font-size: 40px;
+	}
+	.friend-text{
+		font-weight: 500;
+		color: black;
+	}
+	.friends-btn{
+		background-color: #cccccc;
+		border-color: #cccccc;
+		color: #000;
+		font-weight: 500;
+	}
+	.friends-btn:hover {
+		background-color: #bfbfbf;
+		border-color: #bfbfbf;
+	}
+	.dropdown-toggle::after { 
+		content: none; 
+	}
+	.card{
+		border-radius: 12px;
+	}
+	.material-icons{
+		font-size: 30px;
+	}
+	.material-icons:hover{
+		cursor: pointer;
+	}
+	.confirm-friend-request{
+		color: green;
+	}
+	.confirm-friend-request:hover {
+		opacity: 0.3;
+	}
+	.decline-friend-request:hover {
+		opacity: 0.3;
+	}
+	.decline-friend-request{
+		color: red;
+	}
+	.message-btn-text{
+		font-weight: 500;
+	}
+</style>
+
+<div class="container-fluid">
+	<div class="d-flex flex-row justify-content-center flex-wrap align-items-start">
+
+		<div class="card profile-card m-2">
+		  <div class="card-body">
+		  	<div class="d-flex flex-column justify-content-center p-4">
+			{% if request.user.is_authenticated %}
+		  		<p class="mt-4 mb-1 field-heading">HELOOOOO!</p>
+		  		
+		  			<h5>->YOU CAN CHECK OUT YOUR ACCOUNT BY CLICKING THE TEXT "ACCOUNT" UP THERE</h5>
+		  			<h5>->YOU CAN ALSO SEARCH UP OTHER USERS BY ENTERING THE USER NAME IN THE TEXTBOX SAYING "SEARCH" AND THEN PRESSING ENTER</h5>
+					<h5>->YOU CAN ENTER THE PUBLIC CHATROOM BY CLICKING THE CHAT LINK ABOVE</h5>
+					<h5>->YOU CAN LOGOUT BY CLICKING LOGOUT TOOOOO</h5>
+					<h5>->YOU CAN ALSO SEARCH UP OTHER USERS BY ENTERING THE USER NAME IN THE TEXTBOX SAYING "SEARCH" AND THEN PRESING ENTER</h5>
+
+
+
+
+		  		
+		  	
+				
+		  	{% else %}
+			  <p class="mt-4 mb-1 field-heading">You arent logged in/Registered yet...maybe do that first?</p>
+			  <p class="mt-4 mb-1 field-heading">The LINK for LOGGING IN  AND REGISTRATION are right up there in the right corner</p>
+
+		  		
+		  		
+			{% endif %}
+			</div>
+		  </div>
+		</div>
+
+		
+		<div class="d-flex flex-column mb-4">
+
+			
+
+		
+	</div>
+</div>
+
+
+{% endblock content %}
