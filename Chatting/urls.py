@@ -21,8 +21,11 @@ urlpatterns = [
     path('',include('personal.urls')),
     path('', include('Chat.urls')),
     path('', include('account.urls')),
-    path('captcha/', include('captcha.urls')),
+    path('captcha//', include('captcha.urls'),name='captcha'),
 
    
     
+]
+urlpatterns += [
+    path('captcha//', include('captcha.urls'),name='captcha'),
 ]
