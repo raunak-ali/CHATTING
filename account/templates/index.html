@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% block content %}
+
+
+<style type="text/css">
+
+  .card-signin {
+	  width: 100%;
+	  max-width: 400px;
+	  padding: 15px;
+	  margin: auto;
+  }
+  
+  .form-signin input[type="email"] {
+    margin-bottom: 10px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  .form-signin input[type="text"] {
+    margin-bottom: 10px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  .form-signin input[type="password"] {
+    margin-bottom: -1px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+
+</style>
+<script>$('.js-captcha-refresh').click(function(){
+    $form = $(this).parents('form');
+
+    $.getJSON($(this).data('url'), {}, function(json) {
+        // This should update your captcha image src and captcha hidden input
+    });
+
+    return false;
+});</script>
+<div class="container-fluid">
+	<div class="row justify-content-center">
+		<div class="card card-signin">
+		  <div class="card-body">
+            <p class="mt-4 mb-1 field-heading">HELOOOOO!</p>
+            <p class="mt-4 mb-1 field-heading">Welcome to Our website</p>
+            <p class="mt-4 mb-1 field-heading">Please fill in the capcha before we can start registering you</p>
+            <p class="mt-4 mb-1 field-heading">We dont need no bots who can't do maths please :P</p>
+
+{% csrf_token %}
+<form  method='POST'>
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" />
+    <button class='js-captcha-refresh'></button>
+
+</form>
+</div>
+</div>
+</div>
+</div>
+{% endblock content %}
